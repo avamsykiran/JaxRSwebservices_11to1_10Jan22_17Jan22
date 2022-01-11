@@ -1,0 +1,17 @@
+package com.cts.jrsws.resources;
+
+import javax.print.attribute.standard.Media;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/greet")
+public class GreetResource {
+
+	@GET
+	@Produces({MediaType.TEXT_PLAIN})
+	public String getGreetingText() {
+		return "Hello Everybody";
+	}
+}

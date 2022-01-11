@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+F:\IIHT\Cognizent\DTP\2022\ongoing\JaxRSwebservices_11to1_10Jan22_17Jan22\WS\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1452398945.index
+249255334.index
+2669869646.index
+2516082334.index
+3082164654.index
+363697623.index
