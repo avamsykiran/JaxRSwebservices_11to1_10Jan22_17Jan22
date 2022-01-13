@@ -7,6 +7,8 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="JaxRsCrudRestApi"/>
+			<item value="JaxRsWebService2"/>
 			<item value="JaxRsWebService1"/>
 		</list>
 		<list key="version">

@@ -178,7 +178,7 @@ JAX-RS Annotations
 
     @Context
 
-Maven Dependecies
+Maven Dependecies (Jersy 1.x)
 -------------------------------------------------------------------------------------------
 
         <dependency>
@@ -202,11 +202,46 @@ Maven Dependecies
 			<version>1.19.4</version>
 		</dependency>
 
+    web.xml
+
+    <servlet>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+
+Maven Dependency (Jersy 2.x)
+--------------------------------------------------------------------------------
 
         <dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20170516</version>
-		</dependency>
+                <groupId>org.glassfish.jersey.containers</groupId>
+                <artifactId>jersey-container-servlet</artifactId>
+                <version>2.24</version>
+         </dependency>
+ 
+        <dependency>
+                <groupId>javax.xml</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.1</version>
+        </dependency>
 
+    web.xml
 
+    <servlet>
+        <servlet-name>jersey-serlvet</servlet-name>
+         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>your-package</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+   </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>jersey-serlvet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
