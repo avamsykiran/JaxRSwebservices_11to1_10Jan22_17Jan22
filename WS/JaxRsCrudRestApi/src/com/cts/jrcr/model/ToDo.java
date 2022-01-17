@@ -2,6 +2,9 @@ package com.cts.jrcr.model;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class ToDo implements Serializable {
 
 	private Long id;
@@ -41,6 +44,11 @@ public class ToDo implements Serializable {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "ToDo [id=" + id + ", task=" + task + ", status=" + status + "]";
 	}
 
 }

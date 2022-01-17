@@ -11,7 +11,9 @@ public class ToDoRepoImpl implements ToDoRepo {
 
 	private Map<Long,ToDo> todosMap;
 	
-	public ToDoRepoImpl() {
+	public static final ToDoRepo instance = new ToDoRepoImpl();
+	
+	private ToDoRepoImpl() {
 		todosMap = new TreeMap<Long, ToDo>();
 		
 		todosMap.put(101L,new ToDo(101L, "Create Sprint Plan", "DONE"));
@@ -34,7 +36,8 @@ public class ToDoRepoImpl implements ToDoRepo {
 
 	@Override
 	public ToDo add(ToDo todo) {
-		return todosMap.put(todo.getId(), todo);
+		todo = todosMap.put(todo.getId(), todo);
+		return todo;
 	}
 
 	@Override

@@ -223,11 +223,11 @@ Maven Dependency (Jersy 2.x)
                 <version>2.24</version>
          </dependency>
  
-        <dependency>
-                <groupId>javax.xml</groupId>
-                <artifactId>jaxb-api</artifactId>
-                <version>2.1</version>
-        </dependency>
+       <dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>2.24</version>
+		</dependency>
 
     web.xml
 
