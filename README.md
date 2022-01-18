@@ -245,3 +245,24 @@ Maven Dependency (Jersy 2.x)
         <servlet-name>jersey-serlvet</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
+
+Jax-Rs Client with Jersy 2.x
+-----------------------------------------------------------------
+
+    <dependency>
+        <groupId>org.glassfish.jersey.core</groupId>
+        <artifactId>jersey-client</artifactId>
+        <version>2.25.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.glassfish.jersey.media</groupId>
+        <artifactId>jersey-media-json-jackson</artifactId>
+        <version>2.25.1</version>
+    </dependency>
+
+    Creating an Instance of a Client            Client client = ClientBuilder.newClient();
+
+    Creating a WebTarget                        WebTarget webTarget = client.target("rest-api-end-point-url");
+
+    

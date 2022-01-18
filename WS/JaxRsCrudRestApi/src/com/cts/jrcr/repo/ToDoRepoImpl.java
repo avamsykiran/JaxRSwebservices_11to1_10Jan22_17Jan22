@@ -9,11 +9,9 @@ import com.cts.jrcr.model.ToDo;
 
 public class ToDoRepoImpl implements ToDoRepo {
 
-	private Map<Long,ToDo> todosMap;
+	private static Map<Long,ToDo> todosMap;
 	
-	public static final ToDoRepo instance = new ToDoRepoImpl();
-	
-	private ToDoRepoImpl() {
+	static {
 		todosMap = new TreeMap<Long, ToDo>();
 		
 		todosMap.put(101L,new ToDo(101L, "Create Sprint Plan", "DONE"));
@@ -21,7 +19,6 @@ public class ToDoRepoImpl implements ToDoRepo {
 		todosMap.put(103L,new ToDo(103L, "Create StandUp Schedule", "ON_GOING"));
 		todosMap.put(104L,new ToDo(104L, "Create Build Schedule", "PENDING"));
 		todosMap.put(105L,new ToDo(105L, "Create Review Schedule", "PENDING"));
-		
 	}
 	
 	@Override
@@ -36,13 +33,14 @@ public class ToDoRepoImpl implements ToDoRepo {
 
 	@Override
 	public ToDo add(ToDo todo) {
-		todo = todosMap.put(todo.getId(), todo);
+		todosMap.put(todo.getId(), todo);
 		return todo;
 	}
 
 	@Override
 	public ToDo update(ToDo todo) {
-		return todosMap.replace(todo.getId(), todo);
+		todosMap.replace(todo.getId(), todo);
+		return todo;
 	}
 
 	@Override

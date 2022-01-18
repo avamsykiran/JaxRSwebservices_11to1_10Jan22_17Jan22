@@ -24,7 +24,7 @@ public class ToDoService {
 	private ToDoRepo todoRepo;
 
 	public ToDoService() {
-		this.todoRepo = ToDoRepoImpl.instance;
+		this.todoRepo = new ToDoRepoImpl();
 	}
 
 	@GET
